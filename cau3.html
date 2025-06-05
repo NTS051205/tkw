@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Câu 3</title>
+</head>
+<body>
+
+  <h1>Danh sách các khóa học tiếng Anh</h1>
+
+  <div id="khoaHocContainer"></div>
+
+  <script>
+    const jsonData = `[
+      {
+        "tenKhoaHoc": "Tiếng Anh Giao tiếp cơ bản",
+        "moTa": "Phù hợp với người mới bắt đầu học.",
+        "hocPhi": "1.500.000 VND",
+        "thoiGianKhaiGiang": "10/07/2025"
+      },
+      {
+        "tenKhoaHoc": "Tiếng Anh cho người đi làm",
+        "moTa": "Tập trung vào giao tiếp trong công sở.",
+        "hocPhi": "2.000.000 VND",
+        "thoiGianKhaiGiang": "15/07/2025"
+      },
+      {
+        "tenKhoaHoc": "Luyện thi IELTS",
+        "moTa": "Luyện kỹ năng làm bài thi IELTS chuyên sâu.",
+        "hocPhi": "3.000.000 VND",
+        "thoiGianKhaiGiang": "20/07/2025"
+      },
+      {
+        "tenKhoaHoc": "Tiếng Anh cho thiếu nhi",
+        "moTa": "Dành cho học sinh từ 6-12 tuổi.",
+        "hocPhi": "1.200.000 VND",
+        "thoiGianKhaiGiang": "01/08/2025"
+      }
+    ]`;
+    const khoaHocs = JSON.parse(jsonData);
+    const container = document.getElementById('khoaHocContainer');
+    let i = 0;
+    while (i < khoaHocs.length) {
+      const khoaHoc = khoaHocs[i];
+      const div = document.createElement('div');
+      div.innerHTML = `
+        <h3>${khoaHoc.tenKhoaHoc}</h3>
+        <p><strong>Mô tả:</strong> ${khoaHoc.moTa}</p>
+        <p><strong>Học phí:</strong> ${khoaHoc.hocPhi}</p>
+        <p><strong>Khai giảng:</strong> ${khoaHoc.thoiGianKhaiGiang}</p>
+        <hr>
+      `;
+      container.appendChild(div);
+      i++;
+    }
+  </script>
+
+</body>
+</html>
