@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>English Learning Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #2f63ff;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 10px 20px;
+        }
+
+        .header-main {
+            display: flex;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 24px;
+            margin: 0 0 0 10px;
+        }
+
+        header p {
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        nav {
+            background-color: #2fcbff;
+            padding: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffe700;
+        }
+
+        .advert {
+            width: 100%;
+            height: 200px;
+            background-color: #ffe700;
+            border: 2px solid #00e56b;
+            margin: 30px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .advert:hover {
+            background-color: #2fcbff;
+            border-color: #2f63ff;
+            font-style: italic;
+        }
+
+        .course-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .item {
+            width: 200px;
+            height: auto;
+            background-color: #2fcbff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .item h3 {
+            margin-top: 0;
+        }
+
+        .item:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 8px 24px rgba(47,203,255);
+            background-color: #ffe700;
+            color: #2f63ff;
+            transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+        }
+
+        form {
+            max-width: 600px;
+            margin: 40px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            margin-top: 20px;
+            background-color: #00b253;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #00e56b;
+        }
+
+        .logo {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        @media screen and (max-width: 414px) {
+            nav a {
+                flex: 1 1 100%;
+                text-align: center;
+            }
+
+            .course-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            form {
+                padding: 15px;
+            }
+        }
+        @media screen and (min-width: 415px) and (max-width: 1024px) {
+            form {
+                max-width: 80%;
+                padding: 20px
+            }
+        }
+        @media screen and (min-width: 1025px) and (max-width: 1440px) {
+            form {
+                max-width: 800px;
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-main">
+            <svg class="logo" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="40" fill="#ffe700" />
+                <text x="50%" y="55%" text-anchor="middle" fill="#000" font-size="30" font-family="Arial" dy=".3em">E</text>
+            </svg>
+            <h1>English Learning</h1>
+            
+        </div>
+        <p>Khơi nguồn đam mê, nâng tầm tiếng Anh!</p>
+    </header>
+     <nav>
+        <ul>
+            <li><a href="cau1.html">Trang Chủ</a></li>
+            <li><a href="cau2.html">Quảng Cáo</a></li>
+            <li><a href="cau3.html">Khóa Học</a></li>
+            <li><a href="cau4.html">Đăng Ký</a></li>
+        </ul>
+    </nav>
+    <div class="advert">
+        <h2>Ưu đãi đặc biệt: Giảm 30% học phí khi đăng ký trước 15/07/2025!</h2>
+    </div>
+    <section>
+        <h2 style="text-align:center; color: #2f63ff;">Các khóa học nổi bật</h2>
+        <div class="course-container" id="courseContainer"></div>
+    </section>
+    <form id="registrationForm">
+        <h2 style="text-align:center; color:#00b253;">Đăng ký khóa học</h2>
+
+        <label for="fullname">Họ và tên:</label>
+        <input type="text" id="fullname" name="fullname">
+
+        <label for="email">Địa chỉ email:</label>
+        <input type="email" id="email" name="email">
+
+        <label for="phone">Số điện thoại:</label>
+        <input type="tel" id="phone" name="phone">
+
+        <label for="course">Khóa học muốn đăng ký:</label>
+        <select id="course" name="course">
+            <option value="">-- Chọn khóa học --</option>
+            <option value="giao-tiep">Tiếng Anh Giao tiếp</option>
+            <option value="di-lam">Tiếng Anh cho người đi làm</option>
+            <option value="ielts">Luyện thi IELTS</option>
+            <option value="thieu-nhi">Tiếng Anh thiếu nhi</option>
+        </select>
+
+        <label for="time">Thời gian ưu tiên học:</label>
+        <select id="time" name="time">
+            <option value="">-- Chọn thời gian --</option>
+            <option value="sang">Buổi sáng</option>
+            <option value="chieu">Buổi chiều</option>
+            <option value="toi">Buổi tối</option>
+            <option value="cuoi-tuan">Cuối tuần</option>
+        </select>
+        <button type="submit">Đăng ký</button>
+    </form>
+    <script>
+        const data = [
+            {
+                tenKhoaHoc: "Tiếng Anh Giao tiếp cơ bản",
+                moTa: "Phù hợp với người mới bắt đầu học.",
+                hocPhi: "1.500.000 VND",
+                thoiGianKhaiGiang: "10/07/2025"
+            },
+            {
+                tenKhoaHoc: "Tiếng Anh cho người đi làm",
+                moTa: "Tập trung vào giao tiếp trong công sở.",
+                hocPhi: "2.000.000 VND",
+                thoiGianKhaiGiang: "15/07/2025"
+            },
+            {
+                tenKhoaHoc: "Luyện thi IELTS",
+                moTa: "Luyện kỹ năng làm bài thi IELTS chuyên sâu.",
+                hocPhi: "3.000.000 VND",
+                thoiGianKhaiGiang: "20/07/2025"
+            },
+            {
+                tenKhoaHoc: "Tiếng Anh cho thiếu nhi",
+                moTa: "Dành cho học sinh từ 6-12 tuổi.",
+                hocPhi: "1.200.000 VND",
+                thoiGianKhaiGiang: "01/08/2025"
+            }
+        ];
+
+        let i = 0;
+        const container = document.getElementById('courseContainer');
+        while (i < data.length) {
+            const item = document.createElement('div');
+            item.className = 'item';
+            item.innerHTML = `
+        <h3>${data[i].tenKhoaHoc}</h3>
+        <p><strong>Mô tả:</strong> ${data[i].moTa}</p>
+        <p><strong>Học phí:</strong> ${data[i].hocPhi}</p>
+        <p><strong>Khai giảng:</strong> ${data[i].thoiGianKhaiGiang}</p>
+      `;
+            container.appendChild(item);
+            i++;
+        }
+        document.getElementById('registrationForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const fullname = document.getElementById('fullname').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const course = document.getElementById('course').value;
+            const time = document.getElementById('time').value.trim();
+            if (!fullname || !email || !phone || !course || !time) {
+                alert('Vui lòng điền đầy đủ thông tin!');
+                return;
+            }
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const phoneRegex = /^[0-9]{10}$/;
+            if (!emailRegex.test(email)) {
+                alert('Email không hợp lệ!');
+                return;
+            }
+            if (!phoneRegex.test(phone)) {
+                alert('Số điện thoại phải có 10 chữ số!');
+                return;
+            }
+            alert('Đăng ký thành công!');
+        });
+    </script>
+
+</body>
+
+</html>
