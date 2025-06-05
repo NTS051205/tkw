@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng ký khóa học</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+            * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2f63ff;
+        }
+
+        form {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: border 0.3s;
+        }
+
+
+        button {
+            margin-top: 20px;
+            background-color: #00b253;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #00e56b;
+        }
+
+        @media screen and (max-width: 414px) {
+            form {
+                padding: 10px;
+                max-width: 100%;
+            }
+
+            input,
+            select,
+            button {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+
+        @media screen and (min-width: 415px) and (max-width: 1024px) {
+            form {
+                max-width: 80%;
+                padding: 20px
+            }
+        }
+
+        @media screen and (min-width: 1025px) and (max-width: 1440px) {
+            form {
+                max-width: 800px;
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Form đăng ký khóa học</h1>
+
+    <form id="registrationForm">
+        <label for="fullname">Họ và tên:</label>
+        <input type="text" id="fullname" name="fullname">
+
+        <label for="email">Địa chỉ email:</label>
+        <input type="email" id="email" name="email">
+
+
+        <label for="phone">Số điện thoại:</label>
+        <input type="tel" id="phone" name="phone">
+
+
+        <label for="course">Khóa học muốn đăng ký:</label>
+        <select id="course" name="course">
+            <option value="">-- Chọn khóa học --</option>
+            <option value="giao-tiep">Tiếng Anh Giao tiếp</option>
+            <option value="di-lam">Tiếng Anh cho người đi làm</option>
+            <option value="ielts">Luyện thi IELTS</option>
+            <option value="thieu-nhi">Tiếng Anh thiếu nhi</option>
+        </select>
+
+
+        <label for="time">Thời gian ưu tiên học:</label>
+        <select id="time" name="time">
+            <option value="">-- Chọn thời gian --</option>
+            <option value="sang">Buổi sáng</option>
+            <option value="chieu">Buổi chiều</option>
+            <option value="toi">Buổi tối</option>
+            <option value="cuoi-tuan">Cuối tuần</option>
+        </select>
+
+        <button type="submit">Đăng ký</button>
+    </form>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const fullname = document.getElementById('fullname').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const course = document.getElementById('course').value;
+            const time = document.getElementById('time').value.trim();
+
+            if (!fullname || !email || !phone || !course || !time) {
+                alert('Vui lòng điền đầy đủ tất cả các trường.');
+                return;
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const phoneRegex = /^[0-9]{10}$/;
+
+            if (!emailRegex.test(email)) {
+                alert('Email không hợp lệ.');
+                return;
+            }
+            if (!phoneRegex.test(phone)) {
+                alert('Số điện thoại phải có 10 chữ số.');
+                return;
+            }
+
+            alert('Đăng ký thành công!');
+        });
+    </script>
+
+</body>
+
+</html>
