@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>English Learning</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
+      padding: 0;
       background-color: #f5f5f5;
     }
+
     header {
       background-color: #2f63ff;
       color: white;
@@ -17,39 +19,66 @@
       align-items: center;
       padding: 10px 20px;
     }
+
+    header h1 {
+      font-size: 24px;
+    }
+
     .logo {
-      width: 40px;
-      height: 40px;
+      width: 50px;
+      height: 50px;
       margin-right: 10px;
     }
+
     nav {
-      background-color: #00b253;
-      display: flex;
-      gap: 20px;
-      padding: 10px 20px;
+      background-color: #2fcbff;
+      padding: 1rem;
     }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+    }
+
     nav div {
       color: white;
-      cursor: pointer;
+      text-decoration: none;
       font-weight: bold;
     }
+
+    nav div:hover {
+      color: #ffe700;
+    }
+
     .content {
       padding: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     }
+
     .content img {
       width: 100%;
       max-width: 400px;
       display: block;
       margin: 15px 0;
     }
+
     h2 {
       color: #2f63ff;
     }
   </style>
 </head>
+
 <body>
 
+  <!-- Header -->
   <header>
+    <!-- SVG logo (vector ảnh) -->
     <svg class="logo" viewBox="0 0 100 100">
       <circle cx="50" cy="50" r="40" fill="#ffe700" />
       <text x="50%" y="55%" text-anchor="middle" fill="#000" font-size="30" font-family="Arial" dy=".3em">E</text>
@@ -57,20 +86,26 @@
     <h1>English Learning</h1>
   </header>
 
-   <nav>
-    <div>Trang chủ</div>
-    <div>Quảng cáo</div>
-    <div>Khóa học</div>
-    <div>Đăng Ký</div>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <div>Trang Chủ</div>
+      <div>Quảng Cáo</div>
+      <div>Khóa Học</div>
+      <div>Đăng Ký</div>
+    </ul>
   </nav>
 
-
+  <!-- Nội dung giới thiệu -->
   <div class="content">
     <h2>Khóa học tiếng Anh giao tiếp 2025</h2>
-    <p><strong>Khóa học này</strong> được thiết kế dành cho người mới bắt đầu hoặc muốn cải thiện kỹ năng giao tiếp tiếng Anh trong công việc và cuộc sống hàng ngày.</p>
+    <p><strong>Khóa học này</strong> được thiết kế dành cho người mới bắt đầu hoặc muốn cải thiện kỹ năng giao tiếp
+      tiếng Anh trong công việc và cuộc sống hàng ngày.</p>
     <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/English_language_text.png" alt="English Course">
-    <p>Học viên sẽ được tiếp cận với các <strong>tình huống thực tế</strong>, cải thiện phát âm, từ vựng và phản xạ nghe nói thông qua các buổi học tương tác.</p>
+    <p>Học viên sẽ được tiếp cận với các <strong>tình huống thực tế</strong>, cải thiện phát âm, từ vựng và phản xạ nghe
+      nói thông qua các buổi học tương tác.</p>
   </div>
 
 </body>
+
 </html>
